@@ -1,8 +1,10 @@
 <?php
 
-class View {
+class View
+{
 
-    public static function render($view, $data = [], $layout = "main") {
+    public static function render($view, $data = [], $layout = "main")
+    {
         extract($data);
 
         ob_start();
@@ -12,7 +14,8 @@ class View {
         require "../app/views/layouts/$layout.php";
     }
 
-    public static function component($name, $props = []) {
+    public static function component($name, $props = [])
+    {
         extract($props);
         require "../app/views/components/$name.php";
     }
